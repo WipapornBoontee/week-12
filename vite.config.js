@@ -11,4 +11,17 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+    css: {
+        preprocessorOptions: {
+            scss: {
+                silenceDeprecations: [
+                    'import',
+                    'legacy-js-api',
+                    'color-functions',
+                    'global-builtin',
+                    'if-function',
+                ],
+            },
+        },
+    },
 });
