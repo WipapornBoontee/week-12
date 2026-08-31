@@ -46,3 +46,7 @@ Route::delete('/blogs/{id}/delete', [AdminController::class, 'destroy'])->name('
 Route::get('/blogs/{id}/view', [AdminController::class, 'view'])->name('blog.view');
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
