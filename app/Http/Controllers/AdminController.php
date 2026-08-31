@@ -9,6 +9,10 @@ use App\Models\Blog;
 
 class AdminController extends Controller
 {
+      public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function blog(Request $request)
     {
         $search = $request->input('search');
