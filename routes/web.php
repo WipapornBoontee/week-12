@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\AdminController;
 
 Route::get('/', function () {
-    return view('index');
-})->name('index');
+    return view('home');
+})->name('home');
 
 Route::get('/login', function () {
     return view('login');
@@ -15,20 +15,20 @@ Route::get('/login', function () {
 
 Route::post('/login-process', function (Request $request) {
     $username = $request->input('username');  
-    return redirect()->route('home')->with('user_logged_in', $username);
+    return redirect()->route('index')->with('user_logged_in', $username);
 });
 
-Route::get('/home', function () {
-    return view('home');
-})->name('home');
+Route::get('/index', function () {
+    return view('index');
+})->name('index');
 
 Route::get('/logout', function () {
     return redirect()->route('login');
 })->name('logout');
 
-Route::get('/add', function () {
-    return view('add'); 
-})->name('add');
+Route::get('/form_add_blogs', function () {
+    return view('form_add_blogs'); 
+})->name('form_add_blogs');
 
 
 Route::get('/abouts', function () {
